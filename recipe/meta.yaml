@@ -1,5 +1,5 @@
 {% set name = "tad-dftd3" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tad_dftd3-{{ version }}.tar.gz
-  sha256: 9afe6d4a468fee6f9f113c50f32eba14dd285fc04df05488ddd7239add62f8ec
+  sha256: 65adb0da55146427a721e79e38a850fffccee647e558db9934a09119c1e0acf8
 
 build:
   noarch: python
