@@ -1,13 +1,14 @@
 {% set name = "tad-dftd3" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tad_dftd3-{{ version }}.tar.gz
-  sha256: 7d353a0ba4c8762a4e9a2e8f0a842f5507147c5960d97fa59e5c261c28076342
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tad_dftd3-{{ version }}.tar.gz
+  sha256: e1cfeaecf7145594a2ce8a52c650f17a61e69759fdb83c7719af025ebc83ee69
 
 build:
   noarch: python
@@ -16,14 +17,15 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<3.13
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3.8,<3.13
+    - python >={{ python_min }}
     - numpy <2
+    - pytorch >=1.11,<3
     - tad-mctc
-    - pytorch >=1.11,<2.5
+    - typing-extensions
 
 test:
   imports:
@@ -31,6 +33,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
