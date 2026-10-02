@@ -1,14 +1,13 @@
 {% set name = "tad-dftd3" %}
-{% set version = "0.6.0" %}
-{% set python_min = "3.8" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tad_dftd3-{{ version }}.tar.gz
-  sha256: 1f14bb4049d06139e30056cc0bb67defce4ccf27130a9555e181a7309356dbc5
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/tad_dftd3-{{ version }}.tar.gz
+  sha256: 7b5abcc73ae678982e97533ab7e2991e213430971f3619c1f4c2720735da9fa5
 
 build:
   noarch: python
@@ -24,7 +23,8 @@ requirements:
     - python >={{ python_min }}
     - numpy <2
     - pytorch >=1.11,<3
-    - tad-mctc ==0.7.0
+    - tad-mctc ==0.8.0
+    - tomli >=1.1.0
     - typing-extensions
 
 test:
