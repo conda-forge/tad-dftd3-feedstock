@@ -1,6 +1,5 @@
 {% set name = "tad-dftd3" %}
 {% set version = "0.7.0" %}
-{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
@@ -24,7 +23,8 @@ requirements:
     - python >={{ python_min }}
     - numpy <2
     - pytorch >=1.11,<3
-    - tad-mctc ==0.7.0
+    - tad-mctc ==0.8.0
+    - tomli >=1.1.0  # [py<311]
     - typing-extensions
 
 test:
